@@ -1,0 +1,42 @@
+# umi-plugin-svgs
+
+更简单的 `SVG` 图标使用方案。
+
+## 启用方式
+
+配置开启。
+
+## 介绍
+
+svg 图标放到指定配置的文件夹， 即可直接使用。
+
+## 配置
+
+```ts
+export default {
+  svgs: {
+    entry: resolve(__dirname, './assets/svg'),
+  },
+};
+```
+
+`entry` 指定为 `SVG` 图片文件夹，且该文件夹内的目录结构需要是
+
+## 使用方式
+
+完成上述配置后，启动项目，将会在 `src/.umi` 生成 `plugin-svgs` 图标组件。
+
+![](https://pic1.zhimg.com/v2-9c9a5698bc8fd9f0e02f389ab7714b53.png)
+
+```js
+import React from 'react';
+import ZHIcon from '@@/plugin-svgs';
+
+export default () => {
+  return (
+    <div>
+      <ZHIcon className="icon" type="noData" />
+    </div>
+  );
+};
+```
