@@ -33,7 +33,7 @@ export default {
 }
 ```
 
-`entry` 指定为 `SVG` 图片文件夹，且该文件夹内的目录结构需要是
+`entry` 指定为 `SVG` 图片文件夹
 
 ## 使用方式
 
