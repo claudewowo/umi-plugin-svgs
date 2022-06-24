@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-svgs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "umi svg 插件, 让 svg 图标使用起来更方便.",
   "main": "lib/index.js",
   "scripts": {
