@@ -21,6 +21,8 @@ export default {
 };
 ```
 
+`entry` 指定为 `SVG` 图片文件夹
+
 ## tsconfig.json
 
 ```json
@@ -32,8 +34,6 @@ export default {
   }
 }
 ```
-
-`entry` 指定为 `SVG` 图片文件夹
 
 ## 使用方式
 
