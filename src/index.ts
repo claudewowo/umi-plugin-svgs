@@ -31,21 +31,8 @@ export default (api: IApi) => {
   }
 
   api.chainWebpack((config) => {
-    config.resolve.alias.set(alias, svgsOutput);
+    config.resolve.alias.set(alias, svgsOutput + '/index.tsx');
     return config;
-  });
-
-  api.modifyBabelPresetOpts((opts) => {
-    return {
-      ...opts,
-      import: (opts.import || []).concat([
-        {
-          libraryName: alias,
-          libraryDirectory: 'svgs',
-          camel2DashComponentName: false,
-        },
-      ]),
-    };
   });
 
   api.onGenerateFiles(() => {

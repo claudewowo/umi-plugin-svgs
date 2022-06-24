@@ -43,12 +43,12 @@ export default {
 
 ```js
 import React from 'react';
-import ZHIcon from '@svgs';
+import Icon from '@svgs';
 
 export default () => {
   return (
     <div>
-      <ZHIcon className="icon" type="noData" />
+      <Icon className="icon" type="noData" />
     </div>
   );
 };

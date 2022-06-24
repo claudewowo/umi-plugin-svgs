@@ -20,7 +20,8 @@
     "paths": {
       "@icons": [".umi/plugin-svgs/index.tsx"],
       "@/*": ["./*"],
-      "@@/*": ["./.umi/*"]
+      "@@/*": ["./.umi/*"],
+      "@svgs": ["./.umi/plugin-svgs/index.tsx"]
     }
   },
   "exclude": [

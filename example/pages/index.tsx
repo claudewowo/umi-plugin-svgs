@@ -1,5 +1,5 @@
 import React from 'react';
-import ZHIcon from '@@/plugin-svgs';
+import ZHIcon from '@svgs';
 
 export default () => {
   return (

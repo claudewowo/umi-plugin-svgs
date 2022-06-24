@@ -4,3 +4,5 @@ node_modules
 dist
 .umi-test
 .DS_Store
+es
+lib
