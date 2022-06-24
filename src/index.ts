@@ -3,8 +3,6 @@ import { chalk, chokidar } from '@umijs/utils';
 import { resolve } from 'path';
 import { reactSVGGeneratorFromSVGDir } from './utils';
 export default (api: IApi) => {
-  console.log('SVGS 插件启动');
-  // 插件注册
   api.describe({
     key: 'svgs',
     config: {
@@ -29,7 +27,7 @@ export default (api: IApi) => {
   const { entry, alias = '@svgs' } = svgs;
 
   if (entry === undefined) {
-    console.log(chalk.red('Please set svgs.entry as SVG dir.'));
+    console.log(chalk.red('请设置 svg 的文件目录: `svgs.entry`'));
   }
 
   api.chainWebpack((config) => {

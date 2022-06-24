@@ -16,8 +16,21 @@ svg 图标放到指定配置的文件夹， 即可直接使用。
 export default {
   svgs: {
     entry: resolve(__dirname, './assets/svg'),
+    alias: '@svgs', // 选填，默认 @svgs
   },
 };
+```
+
+## tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@svgs": ["src/.umi/plugin-svgs"]
+    }
+  }
+}
 ```
 
 `entry` 指定为 `SVG` 图片文件夹，且该文件夹内的目录结构需要是
@@ -30,7 +43,7 @@ export default {
 
 ```js
 import React from 'react';
-import ZHIcon from '@@/plugin-svgs';
+import ZHIcon from '@svgs';
 
 export default () => {
   return (
@@ -40,3 +53,10 @@ export default () => {
   );
 };
 ```
+
+## API
+
+| 参数 | 说明 | type |
+| --- | --- | --- |
+| type | 图标类型(图标名称) | ZHSvgInterface(根据 `entry` 目录文件名自动生成，空格转驼峰。) |
+| className | 图标类名 | string |

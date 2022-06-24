@@ -2,19 +2,6 @@ import cpy from 'cpy';
 import { mkdirSync, readdir, readFile, statSync, writeFileSync } from 'fs';
 import path, { dirname, resolve } from 'path';
 
-// TODO
-/**
- * 增量生成 react-svg 组件
- * @param param0
- * @returns
- */
-export async function singleReactSVGGenerator({
-  SVGPath,
-  output,
-  ASNDirName,
-  svgsDirName,
-}) {}
-
 /**
  * 批量生成 react-svg 组件
  * @param param0
@@ -22,9 +9,6 @@ export async function singleReactSVGGenerator({
  */
 export async function reactSVGGeneratorFromSVGDir({ output, entry }) {
   ensure(output);
-
-  // 同步写入方法
-  // TODO 支持 JS
   const write = (data, flag = 'a+') => {
     writeFileSync(resolve(output, 'svg.tsx'), data, {
       flag,
@@ -40,7 +24,6 @@ export async function reactSVGGeneratorFromSVGDir({ output, entry }) {
           write(`${convertStringToCamelCase(key)}: (props: any) => (`);
           const str = item[key];
           const reg = /([a-z])-([a-z])/g;
-          // 给 svg 传递属性， 如果属性名称中包含 - 则需要替换成驼峰式
           const content = str
             .replace('<svg', '<svg {...props}')
             .replace(reg, (words) => {
@@ -58,7 +41,6 @@ export async function reactSVGGeneratorFromSVGDir({ output, entry }) {
     });
 
   await copySVGComponents({ output: output });
-  return '111';
 }
 
 // 读取SVG文件夹下所有svg
@@ -89,11 +71,6 @@ function readfile(SVGPath, filename) {
   });
 }
 
-/**
- * create dir if dir don't existing.
- * @param filepath
- * @param next
- */
 export function ensure(filepath: string, next: string[] = []) {
   try {
     statSync(filepath);
