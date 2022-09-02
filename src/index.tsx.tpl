@@ -14,6 +14,8 @@ export interface Iprops {
   className?: string
   /** svg 文件名 */
   type: keyof ZHSvgInterface
+  /** 样式属性 */
+  style?: object
 }
 /**
  * 图标组件
